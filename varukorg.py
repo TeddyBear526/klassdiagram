@@ -8,12 +8,14 @@ class produkter:
 class varukorg:
     def __init__(self):
         self.tillagda_produkter: list[produkter] = []
+        self.summa = 0
 
     def lägg_till_produkter(self, produkt: produkter):
         self.tillagda_produkter.append(produkt)
+        self.summa += produkt.pris
 
-    def räkna_pris(self):
-        return list[produkter]
+    def total_pris(self):
+        return self.summa
 
 
 korg = varukorg()
@@ -24,4 +26,4 @@ smör = produkter("smör",26.99)
 korg.lägg_till_produkter(ägg)
 korg.lägg_till_produkter(smör)
 
-korg.räkna_pris()
+print(korg.total_pris())
